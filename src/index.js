@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+function App() {
+  return <p>What??</p>;
+}
+
 ReactDOM.render(
-  <h1>THING</h1>,
+  <App />,
   document.getElementById('root')
 );
