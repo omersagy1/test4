@@ -37,7 +37,6 @@ const ActionButton = ({callback, display_text}) => {
 }
 
 
-
 // High level app component. has messy state.
 class App extends React.Component {
 
@@ -61,14 +60,13 @@ class App extends React.Component {
       <div>
          <ActionButton callback={this.addRow}
                        display_text="add row" />
-         <div>
-            <Grid num_rows={this.state.num_rows} 
-                  num_columns={this.state.num_cols}/>
-         </div>
+         <Grid num_rows={this.state.num_rows} 
+               num_columns={this.state.num_cols} />
       </div>
     );
   }
 }
+
 
 ReactDOM.render(
   <App />,
