@@ -13,7 +13,7 @@ const Row = ({num_cells}) => {
   for (let i = 0; i < num_cells; i++) {
     cells.push(<Cell/>);
   }
-  return <div>{cells}</div>
+  return <div>{cells}</div>;
 }
 
 
@@ -22,7 +22,18 @@ const Grid = ({num_rows, num_columns}) => {
   for (let i = 0; i < num_rows; i++) {
     rows.push(<Row num_cells={num_columns}/>);
   }
-  return <div>{rows}</div>
+  return <div>{rows}</div>;
+}
+
+
+const ActionButton = ({callback, display_text}) => {
+    return (
+      <Button variant="raised"
+              color="primary"
+              onClick={callback}>
+        {display_text}
+      </Button>
+    );
 }
 
 
@@ -46,17 +57,10 @@ class App extends React.Component {
   }
 
   render() {
-    const b = (
-      <Button variant="raised"
-              color="primary"
-              onClick={this.addRow}>
-        add row 
-      </Button>
-    )
-
     return (
       <div>
-         <div>{b}</div>
+         <ActionButton callback={this.addRow}
+                       display_text="add row" />
          <div>
             <Grid num_rows={this.state.num_rows} 
                   num_columns={this.state.num_cols}/>
